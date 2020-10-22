@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1870d7165f474effa0c47723e5f0c69d" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Candel" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Filtersss" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.Filters_Candels" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.syana" Width="1.5" PointX="7.5" PointY="1.125" />
+        <EntityTypeShape EntityType="Model.Coustmer" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_Coustmers_Filtersss" />
+        <AssociationConnector Association="Model.FK_syana_Coustmers" />
+        <EntityTypeShape EntityType="Model.accountance" Width="1.5" PointX="0.75" PointY="4.75" />
+        <AssociationConnector Association="Model.FK_accountance_Coustmers" />
+        <EntityTypeShape EntityType="Model.Syana_history" Width="1.5" PointX="7.375" PointY="4.625" />
+        <AssociationConnector Association="Model.FK_Syana_history_Coustmers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

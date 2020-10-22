@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Ali_Amir_Filters.Models.Coustmer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>العملاء</h2>
+
+<p>
+    @Html.ActionLink("أضافة عميل", "Create")
+</p>
+@using (Html.BeginForm("search", "coustmers", FormMethod.Post))
+{
+    <div class="form-group col-md-5 ">
+        <div class=" col-md-8">
+            @Html.TextBox("name", "", new { @class = "form-control" })
+        </div>
+        <div class=" col-md-3">
+            <input type="submit" value="بحث" class="btn btn-block btn-success" />
+        </div>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filtersss.name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone_Number)
+
+                <br />
+                @Html.DisplayFor(modelItem => item.phone_Number2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dates)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filtersss.name)
+            </td>
+            <td> 
+                @Html.ActionLink("history", "syana_history",new {item.Id,cous_name=Model.Select(s=>s.Name).FirstOrDefault() }) |
+                @Html.ActionLink("Edit", "Edit",new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                
+            </td>
+
+        </tr>
+    }
+
+</table>

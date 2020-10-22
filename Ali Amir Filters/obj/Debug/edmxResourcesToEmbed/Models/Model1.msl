@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Ali_AmirEntities">
+    <EntitySetMapping Name="Candels">
+      <EntityTypeMapping TypeName="Model.Candel">
+        <MappingFragment StoreEntitySet="Candels">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Candel_date" ColumnName="Candel date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filterssses">
+      <EntityTypeMapping TypeName="Model.Filtersss">
+        <MappingFragment StoreEntitySet="Filtersss">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Filters_Candels" TypeName="Model.Filters_Candels" StoreEntitySet="Filters Candels">
+      <EndProperty Name="Candels">
+        <ScalarProperty Name="id" ColumnName="candels_id" />
+      </EndProperty>
+      <EndProperty Name="Filtersss">
+        <ScalarProperty Name="id" ColumnName="Filters_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="get_monthss" FunctionName="Model.Store.get_monthss">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.get_monthss_Result">
+          <ScalarProperty Name="filter_name" ColumnName="filter_name" />
+          <ScalarProperty Name="Candel_name" ColumnName="Candel_name" />
+          <ScalarProperty Name="Candel_date" ColumnName="Candel date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="syanas">
+      <EntityTypeMapping TypeName="Model.syana">
+        <MappingFragment StoreEntitySet="syana">
+          <ScalarProperty Name="number_of_months" ColumnName="number_of_months" />
+          <ScalarProperty Name="months_late" ColumnName="months_late" />
+          <ScalarProperty Name="is_done" ColumnName="is_done" />
+          <ScalarProperty Name="filter_name" ColumnName="filter_name" />
+          <ScalarProperty Name="candel_name" ColumnName="candel_name" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coustmers">
+      <EntityTypeMapping TypeName="Model.Coustmer">
+        <MappingFragment StoreEntitySet="Coustmers">
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="Filter_id" ColumnName="Filter_id" />
+          <ScalarProperty Name="Dates" ColumnName="Dates" />
+          <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+          <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="get_new_syanas1" FunctionName="Model.Store.get_new_syanas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.get_new_syanas1_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+          <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="syana_table2" FunctionName="Model.Store.syana_table2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.syana_table2_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+          <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="candls" ColumnName="candls" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="syana_table3" FunctionName="Model.Store.syana_table3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.syana_table3_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+          <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="candls" ColumnName="candls" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="accountances">
+      <EntityTypeMapping TypeName="Model.accountance">
+        <MappingFragment StoreEntitySet="accountance">
+          <ScalarProperty Name="coustmer_id" ColumnName="coustmer_id" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="accountance_date" ColumnName="accountance_date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="accountance_summary" FunctionName="Model.Store.accountance_summary" />
+    <EntitySetMapping Name="Syana_history">
+      <EntityTypeMapping TypeName="Model.Syana_history">
+        <MappingFragment StoreEntitySet="Syana_history">
+          <ScalarProperty Name="month_late" ColumnName="month_late" />
+          <ScalarProperty Name="candel_name" ColumnName="candel_name" />
+          <ScalarProperty Name="coustmer_id" ColumnName="coustmer_id" />
+          <ScalarProperty Name="date_syana_done" ColumnName="date_syana_done" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_history6" FunctionName="Model.Store.sp_history6">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.sp_history6_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_syana_done" ColumnName="date_syana_done" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="money" ColumnName="money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

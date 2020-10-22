@@ -1,0 +1,166 @@
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.dll.config
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.pdb
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.exe
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.exe.config
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.rsp
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.exe
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.exe.config
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.rsp
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.AppContext.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Collections.Immutable.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Console.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Globalization.Calendars.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.Compression.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.FileSystem.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Net.Http.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Net.Sockets.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Reflection.Metadata.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.ValueTuple.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XPath.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.exe
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.exe.config
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.rsp
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\VBCSCompiler.exe
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\roslyn\VBCSCompiler.exe.config
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Antlr3.Runtime.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.SqlServer.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.Web.Infrastructure.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Newtonsoft.Json.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Helpers.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Mvc.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Optimization.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Razor.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Deployment.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Razor.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\WebGrease.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.SqlServer.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Helpers.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Mvc.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Optimization.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Razor.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Deployment.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Razor.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Newtonsoft.Json.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Antlr3.Runtime.pdb
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csprojAssemblyReference.cache
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csproj.CoreCompileInputs.cache
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csproj.CopyComplete
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.dll
+D:\Ali Amir\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.pdb
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.dll.config
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Ali Amir Filters.pdb
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.exe
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.exe.config
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csc.rsp
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.exe
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.exe.config
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\csi.rsp
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Managed.Core.targets
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.AppContext.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Collections.Immutable.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Console.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Globalization.Calendars.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.Compression.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.FileSystem.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Net.Http.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Net.Sockets.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Reflection.Metadata.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.ValueTuple.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XmlDocument.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XPath.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.exe
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.exe.config
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\vbc.rsp
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\VBCSCompiler.exe
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\roslyn\VBCSCompiler.exe.config
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Antlr3.Runtime.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.SqlServer.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.Web.Infrastructure.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Newtonsoft.Json.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Helpers.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Mvc.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Optimization.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Razor.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Deployment.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Razor.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\WebGrease.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\EntityFramework.SqlServer.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Helpers.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Mvc.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Optimization.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.Razor.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Deployment.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\System.Web.WebPages.Razor.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Newtonsoft.Json.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Antlr3.Runtime.pdb
+D:\projects\Ali Amir Filters\Ali Amir Filters\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\projects\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csprojAssemblyReference.cache
+D:\projects\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csproj.CoreCompileInputs.cache
+D:\projects\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.csproj.CopyComplete
+D:\projects\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.dll
+D:\projects\Ali Amir Filters\Ali Amir Filters\obj\Release\Ali Amir Filters.pdb

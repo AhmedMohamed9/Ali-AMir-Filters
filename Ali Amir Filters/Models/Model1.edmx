@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accountance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountance_date" Type="date" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="money" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="coustmer_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Candels">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Candel date" Type="smallint" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Coustmers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="adress" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="phone Number" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="phone Number2" Type="varchar" MaxLength="13" />
+          <Property Name="Dates" Type="date" Nullable="false" />
+          <Property Name="Filter_id" Type="int" Nullable="false" />
+          <Property Name="area" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Filters Candels">
+          <Key>
+            <PropertyRef Name="Filters_id" />
+            <PropertyRef Name="candels_id" />
+          </Key>
+          <Property Name="Filters_id" Type="int" Nullable="false" />
+          <Property Name="candels_id" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filtersss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="syana">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date_syana" Type="date" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="candel_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="filter_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="is_done" Type="bit" Nullable="false" />
+          <Property Name="months_late" Type="int" />
+          <Property Name="number_of_months" Type="int" />
+        </EntityType>
+        <EntityType Name="Syana_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date_syana_done" Type="date" Nullable="false" />
+          <Property Name="coustmer_id" Type="int" Nullable="false" />
+          <Property Name="candel_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="month_late" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_accountance_Coustmers">
+          <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="accountance" Type="Self.accountance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="accountance">
+              <PropertyRef Name="coustmer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coustmers_Filtersss">
+          <End Role="Filtersss" Type="Self.Filtersss" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filtersss">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Coustmers">
+              <PropertyRef Name="Filter_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Filters Candels_Candels">
+          <End Role="Candels" Type="Self.Candels" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Filters Candels" Type="Self.Filters Candels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Candels">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Filters Candels">
+              <PropertyRef Name="candels_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Filters Candels_Filters">
+          <End Role="Filtersss" Type="Self.Filtersss" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Filters Candels" Type="Self.Filters Candels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filtersss">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Filters Candels">
+              <PropertyRef Name="Filters_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syana_Coustmers">
+          <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="syana" Type="Self.syana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="syana">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Syana_history_Coustmers">
+          <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Syana_history" Type="Self.Syana_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Syana_history">
+              <PropertyRef Name="coustmer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="accountance_summary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="date_month" Type="int" Mode="In" />
+          <Parameter Name="date_year" Type="int" Mode="In" />
+          <Parameter Name="acc_type" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="get_monthss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="filt_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="get_new_syanas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_history6" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cous_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="syana_table2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="syana_table3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="accountance" EntityType="Self.accountance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Candels" EntityType="Self.Candels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coustmers" EntityType="Self.Coustmers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Filters Candels" EntityType="Self.Filters Candels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Filtersss" EntityType="Self.Filtersss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="syana" EntityType="Self.syana" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Syana_history" EntityType="Self.Syana_history" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_accountance_Coustmers" Association="Self.FK_accountance_Coustmers">
+            <End Role="Coustmers" EntitySet="Coustmers" />
+            <End Role="accountance" EntitySet="accountance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coustmers_Filtersss" Association="Self.FK_Coustmers_Filtersss">
+            <End Role="Filtersss" EntitySet="Filtersss" />
+            <End Role="Coustmers" EntitySet="Coustmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Filters Candels_Candels" Association="Self.FK_Filters Candels_Candels">
+            <End Role="Candels" EntitySet="Candels" />
+            <End Role="Filters Candels" EntitySet="Filters Candels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Filters Candels_Filters" Association="Self.FK_Filters Candels_Filters">
+            <End Role="Filtersss" EntitySet="Filtersss" />
+            <End Role="Filters Candels" EntitySet="Filters Candels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syana_Coustmers" Association="Self.FK_syana_Coustmers">
+            <End Role="Coustmers" EntitySet="Coustmers" />
+            <End Role="syana" EntitySet="syana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Syana_history_Coustmers" Association="Self.FK_Syana_history_Coustmers">
+            <End Role="Coustmers" EntitySet="Coustmers" />
+            <End Role="Syana_history" EntitySet="Syana_history" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Candel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Candel_date" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Filterssses" Relationship="Self.Filters_Candels" FromRole="Candels" ToRole="Filtersss" />
+          <Property Name="price" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filtersss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Candels" Relationship="Self.Filters_Candels" FromRole="Filtersss" ToRole="Candels" />
+          <NavigationProperty Name="Coustmers" Relationship="Model.FK_Coustmers_Filtersss" FromRole="Filtersss" ToRole="Coustmer" />
+        </EntityType>
+        <Association Name="Filters_Candels">
+          <End Role="Candels" Type="Self.Candel" Multiplicity="*" />
+          <End Role="Filtersss" Type="Self.Filtersss" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Ali_AmirEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Candels" EntityType="Self.Candel" />
+          <EntitySet Name="Filterssses" EntityType="Self.Filtersss" />
+          <AssociationSet Name="Filters_Candels" Association="Self.Filters_Candels">
+            <End Role="Candels" EntitySet="Candels" />
+            <End Role="Filtersss" EntitySet="Filterssses" />
+          </AssociationSet>
+          <FunctionImport Name="get_monthss" ReturnType="Collection(Model.get_monthss_Result)">
+          <Parameter Name="filt_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="syanas" EntityType="Model.syana" />
+          <EntitySet Name="Coustmers" EntityType="Model.Coustmer" />
+          <AssociationSet Name="FK_Coustmers_Filtersss" Association="Model.FK_Coustmers_Filtersss">
+            <End Role="Filtersss" EntitySet="Filterssses" />
+            <End Role="Coustmer" EntitySet="Coustmers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syana_Coustmers" Association="Model.FK_syana_Coustmers">
+            <End Role="Coustmer" EntitySet="Coustmers" />
+            <End Role="syana" EntitySet="syanas" />
+          </AssociationSet>
+          <FunctionImport Name="get_syanas" ReturnType="Collection(Model.get_syanas_Result)" />
+          <FunctionImport Name="get_new_syanas" ReturnType="Collection(Model.get_new_syanas_Result)" />
+          <FunctionImport Name="get_new_syanas2" ReturnType="Collection(Model.get_new_syanas2_Result)" />
+          <FunctionImport Name="get_new_syanas1" ReturnType="Collection(Model.get_new_syanas1_Result)" />
+          <FunctionImport Name="syana_table" ReturnType="Collection(Model.syana_table_Result)" />
+          <FunctionImport Name="syana_table2" ReturnType="Collection(Model.syana_table2_Result)" />
+          <FunctionImport Name="syana_table3" ReturnType="Collection(Model.syana_table3_Result)" />
+          <EntitySet Name="accountances" EntityType="Model.accountance" />
+          <FunctionImport Name="Accountance_sum" ReturnType="Collection(Model.Accountance_sum_Result)">
+            <Parameter Name="acc_year" Mode="In" Type="Int32" />
+            <Parameter Name="Acc_month" Mode="In" Type="Int32" />
+            <Parameter Name="acc_type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sum_acc" ReturnType="Collection(Decimal)">
+            <Parameter Name="acc_month" Mode="In" Type="Int32" />
+            <Parameter Name="acc_year" Mode="In" Type="Int32" />
+            <Parameter Name="acc_type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="accountance_summary" ReturnType="Collection(Decimal)">
+            <Parameter Name="date_month" Mode="In" Type="Int32" />
+            <Parameter Name="date_year" Mode="In" Type="Int32" />
+            <Parameter Name="acc_type" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_accountance_Coustmers" Association="Model.FK_accountance_Coustmers">
+            <End Role="Coustmer" EntitySet="Coustmers" />
+            <End Role="accountance" EntitySet="accountances" />
+          </AssociationSet>
+          <EntitySet Name="Syana_history" EntityType="Model.Syana_history" />
+          <AssociationSet Name="FK_Syana_history_Coustmers" Association="Model.FK_Syana_history_Coustmers">
+            <End Role="Coustmer" EntitySet="Coustmers" />
+            <End Role="Syana_history" EntitySet="Syana_history" />
+          </AssociationSet>
+          <FunctionImport Name="sp_syana_history" ReturnType="Collection(Model.sp_syana_history_Result)" >
+          <Parameter Name="cous_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_syana_history2" ReturnType="Collection(Model.sp_syana_history2_Result)">
+            <Parameter Name="cous_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_history" ReturnType="Collection(Model.sp_history_Result)">
+            <Parameter Name="cous_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_history6" ReturnType="Collection(Model.sp_history6_Result)">
+          <Parameter Name="cous_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="get_monthss_Result">
+          <Property Type="String" Name="filter_name" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Candel_name" Nullable="false" MaxLength="10" />
+          <Property Type="Int16" Name="Candel_date" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="syana">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_syana" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="candel_name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="filter_name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="is_done" Type="Boolean" Nullable="false" />
+          <Property Name="months_late" Type="Int32" />
+          <Property Name="number_of_months" Type="Int32" />
+          <NavigationProperty Name="Coustmer" Relationship="Model.FK_syana_Coustmers" FromRole="syana" ToRole="Coustmer" />
+        </EntityType>
+        <EntityType Name="Coustmer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="phone_Number" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="phone_Number2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Dates" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Filter_id" Type="Int32" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Filtersss" Relationship="Model.FK_Coustmers_Filtersss" FromRole="Coustmer" ToRole="Filtersss" />
+          <NavigationProperty Name="syanas" Relationship="Model.FK_syana_Coustmers" FromRole="Coustmer" ToRole="syana" />
+          <NavigationProperty Name="accountances" Relationship="Model.FK_accountance_Coustmers" FromRole="Coustmer" ToRole="accountance" />
+          <NavigationProperty Name="Syana_history" Relationship="Model.FK_Syana_history_Coustmers" FromRole="Coustmer" ToRole="Syana_history" />
+        </EntityType>
+        <Association Name="FK_Coustmers_Filtersss">
+          <End Type="Model.Filtersss" Role="Filtersss" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Coustmer" Role="Coustmer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filtersss">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Coustmer">
+              <PropertyRef Name="Filter_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syana_Coustmers">
+          <End Type="Model.Coustmer" Role="Coustmer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.syana" Role="syana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="syana">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="get_syanas_Result">
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="get_new_syanas_Result">
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="get_new_syanas2_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="get_new_syanas1_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="phone_Number" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="phone_Number2" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="area" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="adress" Nullable="false" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="syana_table_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="phone_Number" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="phone_Number2" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="area" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="adress" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="candls" Nullable="false" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="syana_table2_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="phone_Number" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="phone_Number2" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="area" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="adress" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="candls" Nullable="false" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="syana_table3_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="phone_Number" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="phone_Number2" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="area" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="adress" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="candls" Nullable="false" MaxLength="250" />
+        </ComplexType>
+        <EntityType Name="accountance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="accountance_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="money" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+          <Property Name="coustmer_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Coustmer" Relationship="Model.FK_accountance_Coustmers" FromRole="accountance" ToRole="Coustmer" />
+        </EntityType>
+        <ComplexType Name="Accountance_sum_Result">
+          <Property Type="DateTime" Name="accountance_date" Nullable="false" />
+          <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <Association Name="FK_accountance_Coustmers">
+          <End Type="Model.Coustmer" Role="Coustmer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.accountance" Role="accountance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="accountance">
+              <PropertyRef Name="coustmer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Syana_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_syana_done" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="coustmer_id" Type="Int32" Nullable="false" />
+          <Property Name="candel_name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="month_late" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Coustmer" Relationship="Model.FK_Syana_history_Coustmers" FromRole="Syana_history" ToRole="Coustmer" />
+        </EntityType>
+        <Association Name="FK_Syana_history_Coustmers">
+          <End Type="Model.Coustmer" Role="Coustmer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Syana_history" Role="Syana_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coustmer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Syana_history">
+              <PropertyRef Name="coustmer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_syana_history_Result">
+          <Property Type="DateTime" Name="date_syana_done" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="money" Nullable="false" Precision="7" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_syana_history2_Result">
+          <Property Type="DateTime" Name="date_syana_done" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="money" Nullable="false" Precision="7" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_history_Result">
+          <Property Type="DateTime" Name="date_syana_done" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="money" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="Int32" Name="coustmer_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_history6_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="DateTime" Name="date_syana_done" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="money" Nullable="false" Precision="7" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Ali_AmirEntities">
+          <EntitySetMapping Name="Candels">
+            <EntityTypeMapping TypeName="Model.Candel">
+              <MappingFragment StoreEntitySet="Candels">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Candel_date" ColumnName="Candel date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Filterssses">
+            <EntityTypeMapping TypeName="Model.Filtersss">
+              <MappingFragment StoreEntitySet="Filtersss">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Filters_Candels" TypeName="Model.Filters_Candels" StoreEntitySet="Filters Candels">
+            <EndProperty Name="Candels">
+              <ScalarProperty Name="id" ColumnName="candels_id" />
+            </EndProperty>
+            <EndProperty Name="Filtersss">
+              <ScalarProperty Name="id" ColumnName="Filters_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="get_monthss" FunctionName="Model.Store.get_monthss">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.get_monthss_Result">
+                <ScalarProperty Name="filter_name" ColumnName="filter_name" />
+                <ScalarProperty Name="Candel_name" ColumnName="Candel_name" />
+                <ScalarProperty Name="Candel_date" ColumnName="Candel date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="syanas">
+            <EntityTypeMapping TypeName="Model.syana">
+              <MappingFragment StoreEntitySet="syana">
+                <ScalarProperty Name="number_of_months" ColumnName="number_of_months" />
+                <ScalarProperty Name="months_late" ColumnName="months_late" />
+                <ScalarProperty Name="is_done" ColumnName="is_done" />
+                <ScalarProperty Name="filter_name" ColumnName="filter_name" />
+                <ScalarProperty Name="candel_name" ColumnName="candel_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coustmers">
+            <EntityTypeMapping TypeName="Model.Coustmer">
+              <MappingFragment StoreEntitySet="Coustmers">
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="Filter_id" ColumnName="Filter_id" />
+                <ScalarProperty Name="Dates" ColumnName="Dates" />
+                <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+                <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="get_new_syanas1" FunctionName="Model.Store.get_new_syanas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.get_new_syanas1_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+                <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="syana_table2" FunctionName="Model.Store.syana_table2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.syana_table2_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+                <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="candls" ColumnName="candls" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="syana_table3" FunctionName="Model.Store.syana_table3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.syana_table3_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="date_syana" ColumnName="date_syana" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="phone_Number" ColumnName="phone Number" />
+                <ScalarProperty Name="phone_Number2" ColumnName="phone Number2" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="candls" ColumnName="candls" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="accountances">
+            <EntityTypeMapping TypeName="Model.accountance">
+              <MappingFragment StoreEntitySet="accountance">
+                <ScalarProperty Name="coustmer_id" ColumnName="coustmer_id" />
+                <ScalarProperty Name="money" ColumnName="money" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="accountance_date" ColumnName="accountance_date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="accountance_summary" FunctionName="Model.Store.accountance_summary" />
+          <EntitySetMapping Name="Syana_history">
+            <EntityTypeMapping TypeName="Model.Syana_history">
+              <MappingFragment StoreEntitySet="Syana_history">
+                <ScalarProperty Name="month_late" ColumnName="month_late" />
+                <ScalarProperty Name="candel_name" ColumnName="candel_name" />
+                <ScalarProperty Name="coustmer_id" ColumnName="coustmer_id" />
+                <ScalarProperty Name="date_syana_done" ColumnName="date_syana_done" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_history6" FunctionName="Model.Store.sp_history6">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.sp_history6_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date_syana_done" ColumnName="date_syana_done" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="money" ColumnName="money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

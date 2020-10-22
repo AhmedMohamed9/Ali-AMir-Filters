@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Ali_Amir_Filters.Models.syana>
+
+@{
+    ViewBag.Title = "det";
+}
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="row">
+    <div class="col-md-5">
+        <h2>
+            @Session["date"]
+        </h2>
+    </div>
+    <div class="col-md-5">
+        <h2>
+            @Session["coustmer_name"]
+        </h2>
+
+    </div>
+
+</div>
+
+
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.candel_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.filter_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.months_late)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.candel_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filter_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.months_late)
+            </td>
+            <td>
+                @if (Int32.Parse(Session["month"].ToString()) == DateTime.Now.Month && Int32.Parse(Session["year"].ToString()) == DateTime.Now.Year)
+                {
+                    @Html.ActionLink("تم", "is_done", new { id = item.Id, cous_id = Session["id"], dd = Session["date"] }, new { @class = "btn btn-success" });
+                }
+                @Html.ActionLink("تاجيل شهر", "late_1month", new { id = item.Id, cous_id = item.customer_id, dd = item.date_syana }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("تاجيل 3 شهور", "late_3month", new { id = item.Id, cous_id = item.customer_id, dd = item.date_syana }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+@using (Html.BeginForm("addmoney", "syanas", FormMethod.Post))
+{
+    <div class="form-group col-md-12  ">
+        <div class=" col-md-3">
+            <input id="choose" name="money"onkeyup="check(this.value,'but1')" required class="form-control">
+            @Html.TextBox("type", "in", new { @class = "form-control hidden" })
+            @Html.TextBox("cous_id", Session["id"], new { @class = "hidden" })
+            @Html.TextBox("dd", "in", Session["date"].ToString(), new { @class = "hidden" })
+        </div>
+        <div class=" col-md-3 ">
+            @if (Int32.Parse(Session["month"].ToString()) == DateTime.Now.Month && Int32.Parse(Session["year"].ToString()) == DateTime.Now.Year)
+            {
+        <input type="submit" value=" اضافة مبلغ مستحق" class="btn btn-block btn-success " id="but1" />
+            }
+        </div>
+    </div>
+}
+@using (Html.BeginForm("addmoney", "syanas", FormMethod.Post))
+{
+    <div class="form-group col-md-12  ">
+        <div class=" col-md-3">
+            <input id="choose" name="money" onkeyup="check(this.value,'but2')"required class="form-control">
+            @Html.TextBox("type", "comm", new { @class = "form-control hidden" })
+            @Html.TextBox("cous_id", Session["id"], new { @class = "hidden" })
+            @Html.TextBox("dd", "in", Session["date"].ToString(), new { @class = "hidden" })
+
+        </div>
+        <div class=" col-md-3 ">
+            @if (Int32.Parse(Session["month"].ToString()) == DateTime.Now.Month && Int32.Parse(Session["year"].ToString()) == DateTime.Now.Year)
+            {
+                <input type="submit" value=" اضافة عمولات" class="btn btn-block btn-success" id="but2" />
+            }
+        </div>
+    </div>
+}
+
+<h2>
+    @Html.ActionLink("الرجوع للصيانه", "Index")
+</h2>
+@section Scripts {
+    <script>
+        
+        function check(v,i) {
+            
+            var re = /^(\d{0,5}\.\d{0,2}|\d{0,5}|\.\d{0,2})$/;
+            //document.getElementById('er').innerHTML = re.test(v);
+            if (re.test(v) == false) {
+
+                document.getElementById(i).disabled = true;
+            }
+            else {
+                document.getElementById(i).disabled = false;
+            }
+
+        }
+
+    </script>
+    }

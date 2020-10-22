@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Ali_Amir_Filters.Models.get_new_syanas1_Result>
+
+@{
+    ViewBag.Title = "index3";
+}
+
+<h2>الصيانات</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.date_syana)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_Number2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_syana)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_Number2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adress)
+        </td>
+        <td>
+            @Html.ActionLink("....شمعات ", "Candels", new { id = item.Id, date = item.date_syana }, new { @class = "btn btn-success", @target = "_blank" })
+        </td>
+    </tr>
+}
+</table>

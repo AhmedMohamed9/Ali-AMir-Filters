@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ali_Amir_Filters.Models.sp_history6_Result>
+@{
+    ViewBag.Title = "syana_history";
+}
+
+    <h2> تاريخ صيانات - @ViewBag.name</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.date_syana_done)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.money)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_syana_done)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.money)
+            </td>
+            
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="accountance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="accountance_date" Type="date" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="money" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="coustmer_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Candels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Candel date" Type="smallint" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coustmers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="adress" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="phone Number" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="phone Number2" Type="varchar" MaxLength="13" />
+    <Property Name="Dates" Type="date" Nullable="false" />
+    <Property Name="Filter_id" Type="int" Nullable="false" />
+    <Property Name="area" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Filters Candels">
+    <Key>
+      <PropertyRef Name="Filters_id" />
+      <PropertyRef Name="candels_id" />
+    </Key>
+    <Property Name="Filters_id" Type="int" Nullable="false" />
+    <Property Name="candels_id" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Filtersss">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="syana">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_syana" Type="date" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="candel_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="filter_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="is_done" Type="bit" Nullable="false" />
+    <Property Name="months_late" Type="int" />
+    <Property Name="number_of_months" Type="int" />
+  </EntityType>
+  <EntityType Name="Syana_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_syana_done" Type="date" Nullable="false" />
+    <Property Name="coustmer_id" Type="int" Nullable="false" />
+    <Property Name="candel_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="month_late" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_accountance_Coustmers">
+    <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="accountance" Type="Self.accountance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coustmers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="accountance">
+        <PropertyRef Name="coustmer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Coustmers_Filtersss">
+    <End Role="Filtersss" Type="Self.Filtersss" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtersss">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Coustmers">
+        <PropertyRef Name="Filter_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Filters Candels_Candels">
+    <End Role="Candels" Type="Self.Candels" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Filters Candels" Type="Self.Filters Candels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candels">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Filters Candels">
+        <PropertyRef Name="candels_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Filters Candels_Filters">
+    <End Role="Filtersss" Type="Self.Filtersss" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Filters Candels" Type="Self.Filters Candels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filtersss">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Filters Candels">
+        <PropertyRef Name="Filters_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_syana_Coustmers">
+    <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="syana" Type="Self.syana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coustmers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="syana">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Syana_history_Coustmers">
+    <End Role="Coustmers" Type="Self.Coustmers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Syana_history" Type="Self.Syana_history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coustmers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Syana_history">
+        <PropertyRef Name="coustmer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="accountance_summary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date_month" Type="int" Mode="In" />
+    <Parameter Name="date_year" Type="int" Mode="In" />
+    <Parameter Name="acc_type" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="get_monthss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filt_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_new_syanas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_history6" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cous_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="syana_table2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="syana_table3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="accountance" EntityType="Self.accountance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Candels" EntityType="Self.Candels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coustmers" EntityType="Self.Coustmers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filters Candels" EntityType="Self.Filters Candels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filtersss" EntityType="Self.Filtersss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="syana" EntityType="Self.syana" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Syana_history" EntityType="Self.Syana_history" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_accountance_Coustmers" Association="Self.FK_accountance_Coustmers">
+      <End Role="Coustmers" EntitySet="Coustmers" />
+      <End Role="accountance" EntitySet="accountance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Coustmers_Filtersss" Association="Self.FK_Coustmers_Filtersss">
+      <End Role="Filtersss" EntitySet="Filtersss" />
+      <End Role="Coustmers" EntitySet="Coustmers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Filters Candels_Candels" Association="Self.FK_Filters Candels_Candels">
+      <End Role="Candels" EntitySet="Candels" />
+      <End Role="Filters Candels" EntitySet="Filters Candels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Filters Candels_Filters" Association="Self.FK_Filters Candels_Filters">
+      <End Role="Filtersss" EntitySet="Filtersss" />
+      <End Role="Filters Candels" EntitySet="Filters Candels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_syana_Coustmers" Association="Self.FK_syana_Coustmers">
+      <End Role="Coustmers" EntitySet="Coustmers" />
+      <End Role="syana" EntitySet="syana" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Syana_history_Coustmers" Association="Self.FK_Syana_history_Coustmers">
+      <End Role="Coustmers" EntitySet="Coustmers" />
+      <End Role="Syana_history" EntitySet="Syana_history" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
